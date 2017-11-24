@@ -10,7 +10,7 @@
     
  
 * Submissions (Projects Starts vs Complete)
-    - `DD_2017.node_field_data` = all project data
+    - `node_field_data` = all project data
 	    - see below for query syntax	
    	
 	`	https://www.discoverdesign.org/projects?`
