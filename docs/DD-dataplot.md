@@ -16,11 +16,11 @@
 	`	https://www.discoverdesign.org/projects?`
 
 			node_field_data
-			uid= USER ID&
-			field_challenge_target_id=###&
-			field_school_name_value= SCHOOL&
-			field_competition_value= All&
-			field_name_value= TEACHER NAME`
+			uid=& 							//USER ID
+			field_challenge_target_id=& 	//###
+			field_school_name_value=& 		//SCHOOL
+			field_competition_value=& 		//T,F, or All
+			field_name_value=& 				//TEACHER NAME`
 	
 	Queries
 	
