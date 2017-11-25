@@ -22,8 +22,12 @@
 			field_competition_value=& 	//T,F, or All
 			field_name_value=& 		//TEACHER NAME`
 	
-	Queries
 	
+	
+	Queries
+	`SELECT * FROM DD_2017.node__field_state;` 
+	
+	- project state (finalized, in-progress, archived)
     - Total Projects Started overall
     - Total Projects Started today 
     - Completed Projects overall

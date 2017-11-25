@@ -35,9 +35,25 @@ WHERE login BETWEEN 1483228800 AND 1511564536;`
 * You need to use `epochconverter.com` to grab the timestamps you'd like to query for.  
 
 ## Account Created Query
-`SELECT uid, name, mail, created, changed, access, login, init FROM DD_2017.users_field_data
-WHERE created BETWEEN 1483228800 AND 1511564536;`
+`SELECT uid, name, mail, created, changed, access,login, init FROM DD_2017.users_field_data
+WHERE created BETWEEN 1483228800 AND 1511564536;
+`
 
 * returns accounts created between Jan 1, 2017 and today.
+
+## Project Status
+	SELECT * FROM DD_2017.node__field_state
+	
+* project state (finalized, in-progress, archived)
+
+## Users In the Last Year + School
+	
+	SELECT uid, name, mail,created, changed, access, login, field_school_name_value 
+		FROM users_field_data
+		INNER JOIN user__field_school_name
+		ON users_field_data.uid = user__field_school_name.entity_id
+		WHERE created BETWEEN 1483228800 AND 1511564536;
+    
+    * you can replace created with access or login
 
 
