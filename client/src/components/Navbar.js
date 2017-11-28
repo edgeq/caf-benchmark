@@ -2,14 +2,13 @@ import React, { Component } from "react";
 
 const NavBar = () => {
 	return (
-		<div class="topnav" id="myTopnav">
-			<a class="active" href="#home">
-				Home
+		<nav class="navbar navbar-inverse bg-inverse">
+			<a class="active" href="#CAF">
+				CAF
 			</a>
-			<a href="#news">News</a>
 			<a href="#contact">Contact</a>
 			<a href="#about">About</a>
-		</div>
+		</nav>
 	);
 };
 
