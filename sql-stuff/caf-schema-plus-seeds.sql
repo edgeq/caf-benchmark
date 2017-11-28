@@ -1,18 +1,8 @@
-DROP DATABASE IF EXISTS caf_benchDB;
-CREATE database caf_benchDB;
-
 USE caf_benchDB;
 
-CREATE TABLE `users_field_data` (
-  `uid` int(10) unsigned NOT NULL,
-  `name` varchar(60) NOT NULL,
-  `mail` varchar(254) DEFAULT NULL,
-  `created` int(11) NOT NULL,
-  `changed` int(11) DEFAULT NULL,
-  `access` int(11) NOT NULL,
-  `login` int(11) DEFAULT NULL,
-  PRIMARY KEY (`uid`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='The data table for user entities.'
+
+INSERT INTO users_field_data (uid, name, mail, created, access, login)
+VALUES (01, "student01", 'email@test.com', 1511890692, 1511890692, 1511827200);
 
 CREATE TABLE `node__field_state` (
   `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
@@ -21,7 +11,10 @@ CREATE TABLE `node__field_state` (
   PRIMARY KEY (`entity_id`),
   KEY `revision_id` (`revision_id`),
   KEY `field_state_value` (`field_state_value`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Data storage for node field field_state.'
+) 
+
+INSERT INTO node__field_state (entity_id, revision_id, field_state_value)
+VALUES (01, 01, "project_finalized");
 
 CREATE TABLE `user__field_school_name` (
   `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
@@ -29,16 +22,22 @@ CREATE TABLE `user__field_school_name` (
   `field_school_name_value` varchar(255) NOT NULL,
   PRIMARY KEY (`entity_id`),
   KEY `revision_id` (`revision_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Data storage for user field field_school_name.'
+) 
+
+INSERT INTO user__field_school_name (entity_id, revision_id, field_school_name_value)
+VALUES (01, 01, "Curie Metropolitan High School");
 
 CREATE TABLE `user__field_school` (
   `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
   `revision_id` int(10) unsigned NOT NULL COMMENT 'The entity revision id this data is attached to, which for an unversioned entity type is the same as the entity id',
   `field_school_target_id` int(10) unsigned NOT NULL COMMENT 'The ID of the target entity.',
-  PRIMARY KEY (`field_school_target_id`),
+  PRIMARY KEY (`entity_id`),
   KEY `revision_id` (`revision_id`),
   KEY `field_school_target_id` (`field_school_target_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Data storage for user field field_school.'
+) 
+
+INSERT INTO user__field_school (entity_id, revision_id, field_school_target_id)
+VALUES (01, 01, 01);
 
 CREATE TABLE `school__field_address_location` (
   `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
@@ -52,4 +51,7 @@ CREATE TABLE `school__field_address_location` (
   PRIMARY KEY (`entity_id`),
   KEY `revision_id` (`revision_id`),
   KEY `field_address_location_administrative_area` (`field_address_location_administrative_area`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Data storage for school field field_address_location.'
+) 
+
+INSERT INTO school__field_address_location (entity_id, revision_id, field_address_location_address_line1, field_address_location_locality, field_address_location_administrative_area, field_address_location_postal_code, field_address_location_country_code)
+VALUES (01, 01, "3212 WEST GEORGE ST", "CHICAGO", "IL", "60618-7529", "US" );
