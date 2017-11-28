@@ -55,3 +55,14 @@ CREATE TABLE `school__field_address_location` (
 
 INSERT INTO school__field_address_location (entity_id, revision_id, field_address_location_address_line1, field_address_location_locality, field_address_location_administrative_area, field_address_location_postal_code, field_address_location_country_code)
 VALUES (01, 01, "3212 WEST GEORGE ST", "CHICAGO", "IL", "60618-7529", "US" );
+
+INSERT INTO users_field_data (uid, name, mail, created, access, login)
+VALUES  
+(02, "student02", 'email02@test.com', 1511890692, 1511890692, 1511827200),
+(03, "student03", 'email03@test.com', 1511890692, 1511890692, 1511827200),
+(04, "student04", 'email04@test.com', 1511890692, 1511890692, 1511827200),
+(05, "student05", 'email05@test.com', 1511890692, 1511890692, 1511827200),
+(06, "student06", 'email06@test.com', 1511890692, 1511890692, 1511827200),
+(07, "student07", 'email07@test.com', 1511890692, 1511890692, 1511827200),
+(08, "student08", 'email08@test.com', 1511890692, 1511890692, 1511827200)
+ ;
