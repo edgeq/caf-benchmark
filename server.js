@@ -23,19 +23,20 @@ app.use(bodyParser.text({ type: 'text/html' }));
 
  //  var $ = cheerio.load(html);
   
-  	
+require("./app/routes/api-routes.js")(app);  	
    	
  //  });
 
- app.get("/api/location", function(req, res) {
+ // app.get("/api/location", function(req, res) {
 
-    var dbQuery = "SELECT field_address_location_country_code FROM school_field_address_location";
+ //    var dbQuery = "SELECT * FROM school_field_address_location";
 
-    connection.query(dbQuery, function(err, result) {
-      res.json(result);
-    });
+ //    connection.query(dbQuery, function(err, result) {
+ //      res.json(result);
+ //      console.log(result)
+ //    });
 
-  });
+ //  });
 
  
 
