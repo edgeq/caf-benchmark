@@ -18,10 +18,7 @@ import Main from "../components/Main";
 export default (
   // High level component is the Router component.
   <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-        
-    
-    </Route>
+    <Route path="/" component={Main}/>
   </Router>
 );
 
