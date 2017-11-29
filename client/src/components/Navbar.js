@@ -2,12 +2,11 @@ import React, { Component } from "react";
 
 const NavBar = () => {
 	return (
-		<nav class="navbar navbar-inverse bg-inverse">
-			<a class="active" href="#CAF">
-				CAF
+		<nav className="navbar navbar-inverse bg-inverse">
+			<a class="navbar-brand" href="#">
+				<img src="img/logo_caf_icon_white.png" href="#index.html" height="30px" alt="CAF"></img>
 			</a>
-			<a href="#contact">Contact</a>
-			<a href="#about">About</a>
+			<a className="active" href="">Benchmark</a>
 		</nav>
 	);
 };

@@ -1,4 +1,77 @@
-.navbar {
-	background: red;
-	color: red;
+/* General */
+/* ==================================================== */
+html, body, #root, [data-reactroot] {
+	height: 94vh;
+	margin: 0px;
+	/* overflow: hidden; */
+	font-family: Avenir-Light;
+}
+body, a {
+	color: white;
+}
+
+body {
+	background: linear-gradient(rgb(78, 78, 78), rgb(58, 58, 58)) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* Navbar */
+/* ==================================================== */
+nav {
+	background: #211d1e;
+	height: 6vh;
+	font-size: 20px;
+	padding: 0 0 0 20px;
+}
+
+nav a {
+	color: rgb(216, 216, 216);
+	font-size: 34px;
+}
+
+nav img {
+	max-height: 100%;
+}
+
+/* Sidebar */
+/* ==================================================== */
+#sidebar {
+	background: linear-gradient(#211d1e, #cb2026);
+	width: 30%;
+	max-width: 300px;
+	min-width: 200px;
+	top: 0; left: 0;
+	min-height: 100%;
+	padding: 25px 0 0 20px;
+	font-size: 22px;
+}
+
+.separator {
+	height: 1px;
+	width: 90%;
+	margin: 10px 0;
+	background: rgb(219, 219, 219);
+	/* float: right; */
+	margin: 0 10px 0 0;
+}
+
+.sidebarBox {
+	color: white;
+	margin: 20px 0 0 0;
+}
+.sidebarNumber {
+	font-size: 40px;
+	margin: -30px 0 0 0;
+	color: rgb(255, 255, 255);
+}
+
+.sidebarGraph {
+	width: 90%;
+	height: 50px;
+	background: rgba(255, 255, 255, 0.466);
+	margin: -10px 0 10px 0;
+	border-radius: 5px;
 }
