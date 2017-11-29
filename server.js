@@ -2,12 +2,13 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var cheerio = require("cheerio");
 var request = require("request");
-var connection = require("./app/config/connection.js")
+var connection = require("./config/connection.js")
 var mysql = require("mysql");
 
 var app = express();
 var PORT = 3000;
 
+require("./controllers/api-routes.js")(app); 	
 
 app.use(bodyParser.urlencoded({ extended: true}));
 
@@ -23,7 +24,6 @@ app.use(bodyParser.text({ type: 'text/html' }));
 
  //  var $ = cheerio.load(html);
   
-require("./app/routes/api-routes.js")(app);  	
    	
  //  });
 

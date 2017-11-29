@@ -9,6 +9,7 @@ var connection = require("../config/connection.js");
 
 // Routes
 // =============================================================
+console.log("we are in this file *************************")
 module.exports = function(app) {
 
   // Get country school is located in
@@ -41,7 +42,7 @@ module.exports = function(app) {
 
   //Get Total Users 
 
-  app.get("/api/totusers", function(req, res) {
+  app.get("/api/totusers" ,function(req, res) {
     
     var userCount = 0;
 
