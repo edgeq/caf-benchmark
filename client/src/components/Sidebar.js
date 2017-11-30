@@ -5,7 +5,10 @@ import API from "../utils/API";
 class SideBar extends Component {
 
 	state = {
-		users: []
+		activeUsers: ['activeUsers'],
+		totalUsers: ['totalUsers'],
+		submissions: ['submissions'],
+		dailySubmissions: ['dailySubmissions']
 	  };
 
 	componentDidMount() {
@@ -15,7 +18,7 @@ class SideBar extends Component {
 	loadUsers = () => {
 		API.getUsers()
 			.then(res =>
-			this.setState({ users: res.data})
+			this.setState({ activeUsers: res.data})
 			)
 			.catch(err => console.log(err));
 	};
@@ -26,27 +29,27 @@ class SideBar extends Component {
 			<div id="sidebar">
 				<div className="row">
 					<div className="sidebarBox">
-					<h2>Overview</h2>
+						<h2>Overview</h2>
 						<p>Active Users</p>
-						<p className="sidebarNumber">99999</p>
+						<p className="sidebarNumber">{this.state.activeUsers}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
 						<p>Total Users</p>
-						<p className="sidebarNumber">{this.state.users}</p>
+						<p className="sidebarNumber">{this.state.totalUsers}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
 						<p>Total Submissions</p>
-						<p className="sidebarNumber">999</p>
+						<p className="sidebarNumber">{this.state.submissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
 						<p>Submissions Today</p>
-						<p className="sidebarNumber">999</p>
+						<p className="sidebarNumber">{this.state.dailySubmissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 				</div>

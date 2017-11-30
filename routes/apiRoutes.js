@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var connection = require("../config/connection.js");
+var connection = require("../utils/API.js");
 
 
 // Routes
@@ -13,10 +13,10 @@ console.log("we are in this file *************************")
 module.exports = function(app) {
 
   // Get country school is located in
-  
+
 
   app.get("/api/location", function(req, res) {
-     
+
      var USA = 0;
 
     var dbQuery = "SELECT * FROM school__field_address_location";
@@ -27,23 +27,23 @@ module.exports = function(app) {
 
 
       // Count for How many schools are in the US
-      
+
       for (var i = 0; i < result.length; i++) {
         result.field_address_location_country_code = "US"
         USA = USA + 1;
       }
 
       console.log(USA);
-     
+
 
     });
 
   });
 
-  //Get Total Users 
+  //Get Total Users
 
   app.get("/api/totusers" ,function(req, res) {
-    
+
     var userCount = 0;
 
     var dbQuery = "SELECT from_unixtime(created) AS userSince FROM users_field_data WHERE created BETWEEN 1483228800 AND 1511564538";
@@ -88,7 +88,7 @@ module.exports = function(app) {
   //Get Total Submitted
 
   app.get("/api/totsub", function(req, res) {
-    
+
     var projFin = 0;
 
     var dbQuery = "SELECT field_state_value FROM node__field_state";
@@ -106,7 +106,7 @@ module.exports = function(app) {
 
     });
   });
-  
+
   //Get Most Active Schools
 
   app.get("/api/actschools", function(req, res) {
@@ -121,6 +121,6 @@ module.exports = function(app) {
 
   //Need Route for User Age
 
-  
+
 
 };
