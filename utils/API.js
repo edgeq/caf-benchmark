@@ -1,20 +1,22 @@
 const mysql = require("mysql2");
 
 // Set up our connection information
-const connection = process.env.JAWSDB_URL ? mysql.createConnection({
-  port: 3306,
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "DD_2017" //swap with caf_benchDB
-}) :
+const connection = process.env.JAWSDB_URL ?
 mysql.createConnection({
   port: 3306,
   host: "otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
   user: "laczbspa3uwaxq5v",
   password: "dehsq7lkj7980js5",
   database: "DD_2017" //swap with caf_benchDB
-});
+}) :
+mysql.createConnection({
+  port: 3306,
+  host: "localhost",
+  user: "root",
+  password: "password",
+  database: "DD_2017" //swap with caf_benchDB
+})
+;
 
 // Connect to the database
 connection.connect(function(err) {
