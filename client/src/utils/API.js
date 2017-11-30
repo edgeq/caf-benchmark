@@ -1,20 +1,33 @@
 import axios from "axios";
 
-export default {
-  // Gets all users
-  getUsers: function() {
-    return axios.get("/api/totusers");
+const mysql = require("mysql");
+
+// Set up our connection information
+const connection = mysql.createConnection({
+  port: 3306,
+  host: "localhost",
+  user: "root",
+  password: "password",
+  database: "caf_benchDB"
+});
+
+// Connect to the database
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
   }
-//   // Gets the book with the given id
-//   getBook: function(id) {
-//     return axios.get("/api/books/" + id);
-//   },
-//   // Deletes the book with the given id
-//   deleteBook: function(id) {
-//     return axios.delete("/api/books/" + id);
-//   },
-//   // Saves a book to the database
-//   saveBook: function(bookData) {
-//     return axios.post("/api/books", bookData);
+  console.log("connected as id " + connection.threadId);
+});
+
+// Export connection
+module.exports = connection;
+
+// export default {
+//   // Gets all users
+//   getUsers: function() {
+//     return axios.get("/api/totusers");
 //   }
-};
+
+// };
+

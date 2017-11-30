@@ -1,14 +1,13 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var cheerio = require("cheerio");
-var request = require("request");
-var connection = require("./config/connection.js")
-var mysql = require("mysql");
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 3001;
+const app = express();
+const apiRoutes = require("./routes/apiRoutes");
 
-var app = express();
-var PORT = 3000;
+app.use(express.static("client/build"));
 
-require("./controllers/api-routes.js")(app); 	
+
 
 app.use(bodyParser.urlencoded({ extended: true}));
 
@@ -19,29 +18,16 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type'}))
 app.use(bodyParser.text({ type: 'text/html' }));
 
 
- // request("https://api.slideroom.com/api/v2/applicant/attributes/names", function(error, response, html) {
- // 	//console.log(response)
+app.use("/api", apiRoutes);
 
- //  var $ = cheerio.load(html);
-  
-   	
- //  });
 
- // app.get("/api/location", function(req, res) {
-
- //    var dbQuery = "SELECT * FROM school_field_address_location";
-
- //    connection.query(dbQuery, function(err, result) {
- //      res.json(result);
- //      console.log(result)
- //    });
-
- //  });
-
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+}); 
  
 
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+  console.log(`🌎 ==> Server now on port ${PORT}!`);
 
-})
+});
 
