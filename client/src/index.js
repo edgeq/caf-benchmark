@@ -1,11 +1,6 @@
-// Include the Main React Dependencies
-// import React from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import App from "./App";
 
-// Grabs the Routes
-import routes from "./config/routes";
+ReactDOM.render(<App />, document.getElementById("root"));
 
-import registerServiceWorker from "./registerServiceWorker";
-
-ReactDOM.render(routes, document.getElementById("root"));
-registerServiceWorker();
