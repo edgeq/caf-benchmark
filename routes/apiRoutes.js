@@ -46,31 +46,26 @@ module.exports = function(app) {
 
     var userCount = 0;
 
-    var dbQuery = "SELECT from_unixtime(created) AS userSince FROM users_field_data WHERE created BETWEEN 1483228800 AND 1511564538";
+    var dbQuery = "SELECT COUNT(*) AS userCount FROM users_field_data WHERE login BETWEEN 1167609600 and 1512129540";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
-      console.log(result)
+      //console.log(result)
 
       //Count for number of users from January 1, 2017 until Now.
 
-      for (var i = 0; i < result.length; i++){
-        userCount = userCount + 1
-      }
-
-        console.log(userCount)
-
+      
     });
   });
 
   //Get Actual Users
 
   app.get("/api/actusers", function(req, res) {
-    var dbQuery = "SELECT from_unixtime(login) AS lastLogin FROM users_field_data WHERE created BETWEEN 1483228800 AND 1511564538";
+    var dbQuery = "SELECT COUNT(*) AS actCount FROM users_field_data WHERE login BETWEEN 1483228800 and 1512129540";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
-      console.log(result)
+      //console.log(result)
     });
   });
 
@@ -91,18 +86,11 @@ module.exports = function(app) {
 
     var projFin = 0;
 
-    var dbQuery = "SELECT field_state_value FROM node__field_state";
+    var dbQuery = "SELECT COUNT(*) AS subCount FROM node__field_state WHERE field_state_value = 'project_finalized'";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
       console.log(result)
-
-      for (var i = 0; i < result.length; i++) {
-        result.field_state_value = "project_finalized"
-        projFin = projFin + 1;
-      }
-
-      console.log(projFin);
 
     });
   });
