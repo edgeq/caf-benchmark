@@ -40,25 +40,21 @@ module.exports = function(app) {
 
   });
 
-  //Get Total Users
+  //Count number of users from January 1, 2007 until Now.
 
   app.get("/api/totusers" ,function(req, res) {
-
-    var userCount = 0;
 
     var dbQuery = "SELECT COUNT(*) AS userCount FROM users_field_data WHERE login BETWEEN 1167609600 and 1512129540";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
       //console.log(result)
-
-      //Count for number of users from January 1, 2017 until Now.
-
       
     });
   });
 
-  //Get Actual Users
+
+  //Count number of users from January 1, 2017 until Now.
 
   app.get("/api/actusers", function(req, res) {
     var dbQuery = "SELECT COUNT(*) AS actCount FROM users_field_data WHERE login BETWEEN 1483228800 and 1512129540";
@@ -68,6 +64,18 @@ module.exports = function(app) {
       //console.log(result)
     });
   });
+
+
+  //Get dates for Active Users from January 1, 2017 until Now.
+
+  app.get("/api/actuserdate", function(req, res){
+     var dbQuery = "SELECT from_unixtime(login) AS lastLogin FROM users_field_data WHERE login BETWEEN 1483228800 and 1512129540";
+
+    connection.query(dbQuery, function(err, result) {
+      res.json(result);
+      //console.log(result)
+    });
+  })
 
   //Get Submitted Today
 
@@ -83,8 +91,6 @@ module.exports = function(app) {
   //Get Total Submitted
 
   app.get("/api/totsub", function(req, res) {
-
-    var projFin = 0;
 
     var dbQuery = "SELECT COUNT(*) AS subCount FROM node__field_state WHERE field_state_value = 'project_finalized'";
 
