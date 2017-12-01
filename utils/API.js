@@ -13,7 +13,7 @@ mysql.createConnection({
   port: 3306,
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "password", //swap with your local db pw
   database: "DD_2017" //swap with caf_benchDB
 })
 ;
