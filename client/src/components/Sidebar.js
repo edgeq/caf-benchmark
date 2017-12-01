@@ -5,23 +5,48 @@ import API from "../utils/API";
 class SideBar extends Component {
 
 	state = {
-		activeUsers: ['activeUsers'],
+		
 		totalUsers: ['totalUsers'],
-		submissions: ['submissions'],
-		dailySubmissions: ['dailySubmissions']
+		activeUsers: ['activeUsers'],
+		submissions: ['submissions']
+
+		
+		
 	  };
 
 	componentDidMount() {
 		this.loadUsers();
+		this.loadActusers();
+		this.loadTotsubs();
 	}
 
 	loadUsers = () => {
 		API.getUsers()
-			.then(res =>
-			this.setState({ activeUsers: res.data})
-			)
+			.then(res => {
+			console.log(res)
+			this.setState({ totalUsers: res.data[0].userCount})
+			})
 			.catch(err => console.log(err));
 	};
+
+	loadActusers = () => {
+		API.getActusers()
+			.then(res => {
+			console.log(res)
+			this.setState({ activeUsers: res.data[0].actCount})
+			})
+			.catch(err => console.log(err));
+	};
+
+	loadTotsubs = () => {
+		API.getTotsubs()
+			.then(res => {
+			console.log(res)
+			this.setState({ submissions: res.data[0].subCount})
+			})
+			.catch(err => console.log(err));
+	}
+	
 
 	// const Routes.app.get
 	render () {
