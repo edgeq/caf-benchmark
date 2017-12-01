@@ -53,3 +53,24 @@ CREATE TABLE `school__field_address_location` (
   KEY `revision_id` (`revision_id`),
   KEY `field_address_location_administrative_area` (`field_address_location_administrative_area`(191))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Data storage for school field field_address_location.'
+
+
+CREATE TABLE `user__field_birthdate` (
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
+  `field_birthdate_value` varchar(20) NOT NULL COMMENT 'The date value.',
+  PRIMARY KEY (`entity_id`),
+  KEY `revision_id` (`revision_id`),
+  KEY `field_birthdate_value` (`field_birthdate_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Data storage for user field field_birthdate.'
+
+INSERT INTO user__field_birthdate (entity_id, revision_id,  field_birthdate_value)
+VALUES (01, 01-02-2000),
+(02, 01-02-2000),
+(03, 02-03-2001),
+(04, 03-04-2002),
+(05, 04-05-2003),
+(06, 05-06-2004),
+(07, 06-07-2000),
+(08, 07-08-2003),
+(09, 08-09-2002)
+;

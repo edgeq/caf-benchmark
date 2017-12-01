@@ -13,20 +13,9 @@ mysql.createConnection({
   port: 3306,
   host: "localhost",
   user: "root",
-<<<<<<< HEAD
-  password: "password", //swap with your local db pw
+  password: "password",
   database: "DD_2017" //swap with caf_benchDB
-=======
-  password: "",
-<<<<<<< Updated upstream
-  database: "caf_benchDB" //swap with caf_benchDB
-=======
-  // database: "DD_2017" //swap with caf_benchDB
-  database: "caf_benchDB"
->>>>>>> Stashed changes
->>>>>>> ec87e98671e6fe8e04b31bce06099193d4b27342
-})
-;
+});
 
 // Connect to the database
 connection.connect(function(err) {
