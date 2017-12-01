@@ -29,6 +29,7 @@ class SideBar extends Component {
 			.catch(err => console.log(err));
 	};
 
+<<<<<<< Updated upstream
 	loadActusers = () => {
 		API.getActusers()
 			.then(res => {
@@ -49,9 +50,11 @@ class SideBar extends Component {
 	
 
 	// const Routes.app.get
+=======
+>>>>>>> Stashed changes
 	render () {
 		return (
-			<div id="sidebar">
+			<div id="sidebar-wrapper" className="animated slideInLeft col-sm-3">
 				<div className="row">
 					<div className="sidebarBox">
 						<h2>Overview</h2>
