@@ -19,23 +19,13 @@ module.exports = function(app) {
 
      var USA = 0;
 
-    var dbQuery = "SELECT * FROM school__field_address_location";
+    var dbQuery = "SELECT field_address_location_country_code, COUNT(*) FROM school__field_address_location GROUP BY field_address_location_country_code";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
       console.log(result)
 
-
-      // Count for How many schools are in the US
-
-      for (var i = 0; i < result.length; i++) {
-        result.field_address_location_country_code = "US"
-        USA = USA + 1;
-      }
-
-      console.log(USA);
-
-
+      
     });
 
   });
@@ -52,6 +42,15 @@ module.exports = function(app) {
       
     });
   });
+
+  app.get("/api/totuserdate", function(req, res){
+     var dbQuery = "SELECT from_unixtime(login) AS lastLogin FROM users_field_data WHERE login BETWEEN 1167609600 and 1512129540";
+
+    connection.query(dbQuery, function(err, result) {
+      res.json(result);
+      //console.log(result)
+    });
+  })
 
 
   //Count number of users from January 1, 2017 until Now.
@@ -77,7 +76,8 @@ module.exports = function(app) {
     });
   })
 
-  //Get Submitted Today
+  
+  //Get Submitted Today (Need to determine how to do this)
 
   app.get("/api/subtoday", function(req, res) {
     var dbQuery = "SELECT revision_id FROM node__field_state";
@@ -101,10 +101,10 @@ module.exports = function(app) {
     });
   });
 
-  //Get Most Active Schools
+  //Get Most Active Schools and Count
 
   app.get("/api/actschools", function(req, res) {
-    var dbQuery = "SELECT field_school_name_value FROM user__field_school_name";
+    var dbQuery = "SELECT field_school_name_value, COUNT(*) FROM user__field_school_name GROUP BY field_school_name_value";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
@@ -113,7 +113,7 @@ module.exports = function(app) {
     });
   });
 
-  //Need Route for User Age
+  //Need Route for User Age Need to figure out how to get from birthdate
 
 
 
