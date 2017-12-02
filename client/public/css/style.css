@@ -3,7 +3,6 @@
 html, body, #root, [data-reactroot] {
 	height: 94vh;
 	margin: 0px;
-	/* overflow: hidden; */
 	font-family: Avenir-Light;
 }
 body, a {
@@ -11,7 +10,7 @@ body, a {
 }
 
 body {
-	background: linear-gradient(rgb(78, 78, 78), rgb(58, 58, 58)) no-repeat center center fixed; 
+	background: linear-gradient(#211d1e, #2e2c2d) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -38,13 +37,9 @@ nav img {
 
 /* Sidebar */
 /* ==================================================== */
-#sidebar {
+#sidebar-wrapper {
 	background: linear-gradient(#211d1e, #cb2026);
-	width: 30%;
-	max-width: 300px;
-	min-width: 200px;
-	top: 0; left: 0;
-	min-height: 100%;
+	height: 94vh;
 	padding: 25px 0 0 20px;
 	font-size: 22px;
 }
@@ -54,7 +49,6 @@ nav img {
 	width: 90%;
 	margin: 10px 0;
 	background: rgb(219, 219, 219);
-	/* float: right; */
 	margin: 0 10px 0 0;
 }
 
@@ -74,4 +68,38 @@ nav img {
 	background: rgba(255, 255, 255, 0.466);
 	margin: -10px 0 10px 0;
 	border-radius: 5px;
+}
+
+/* Content */
+/* ==================================================== */
+#content-wrapper {
+	height: 94vh;
+}
+
+/* Content Boxes */
+/* ==================================================== */
+
+#locationBox {
+	height: 47vh;
+	/* background: orange; */
+	padding:10px 10px 0;
+}
+
+#demographicsBox {
+	height: 47vh;
+	/* background: blueviolet; */
+	padding:10px 10px;
+}
+
+.boxContent {
+	background: rgb(61, 61, 61);
+	/* margin: 10px auto; */
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+}
+.boxContent h3 {
+	color: white;
+	margin-left: 5px;
+	font-size: 18px;
 }
