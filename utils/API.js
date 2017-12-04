@@ -14,12 +14,7 @@ mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-<<<<<<< Updated upstream
   database: "caf_benchDB" //swap with caf_benchDB
-=======
-  // database: "DD_2017" //swap with caf_benchDB
-  database: "caf_benchDB"
->>>>>>> Stashed changes
 })
 ;
 
