@@ -10,9 +10,12 @@ class DemographicsBox extends Component {
 
     render () {
         return (
-            <div id="demographicsBox" className="animated fadeIn col-sm-6">
+            <div id="demographicsBox" className="animated fadeInUp col-sm-6">
                 <div className="boxContent">
                     <h3>DEMOGRAPHICS</h3>
+                    <div id="demographicsContent">
+                        <canvas id="responseChart"></canvas>
+                    </div>
                 </div>
             </div>
         )

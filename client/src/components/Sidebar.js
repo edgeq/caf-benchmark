@@ -10,8 +10,6 @@ class SideBar extends Component {
 		activeUsers: ['activeUsers'],
 		submissions: ['submissions']
 
-		
-		
 	  };
 
 	componentDidMount() {
