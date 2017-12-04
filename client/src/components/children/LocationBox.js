@@ -2,25 +2,41 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 
 
-const countriesArr = [
-    {name: 'USA', count: '999'},
-    {name: 'China', count: '777'}, 
-    {name: 'Italy', count: '888'}, 
-    {name: 'France', count: '888'}, 
-    {name: 'Canada', count: '888'}, 
-    {name: 'Spain', count: '888'}, 
-    {name: 'UK', count: '888'}, 
-    {name: 'Aus', count: '888'}, 
-    {name: 'S. Korea', count: '888'}, 
-    {name: 'Japan', count: '888'}, 
-]
+
 
 
 class LocationBox extends Component {
     
     state = {
-		countries: countriesArr
+		countries: [],
+        count: []
     };
+
+     componentDidMount() {
+        this.loadLocation();
+        
+    }
+
+    loadLocation = () => {
+        API.getLocation()
+            .then(res => {
+            console.log(res)
+            this.setState({ countries: res.data })
+            })
+            .catch(err => console.log(err));
+    };
+
+
+
+     renderLocation(){
+        return (
+            this.state.countries.map(function(countries){
+                return (
+                    <li>{countries.field_address_location_country_code} <a>{countries['COUNT(*)']}</a></li>
+                )
+            })
+        )
+    }
 
 
 
@@ -33,16 +49,7 @@ class LocationBox extends Component {
                         <div id="countryRankings">
                             <ol>
                                 <h3>Country</h3> <h4>Count</h4>
-                                <li>{this.state.countries[0].name} <a>{this.state.countries[0].count}</a></li>
-                                <li>{this.state.countries[1].name} <a>{this.state.countries[1].count}</a></li>
-                                <li>{this.state.countries[2].name} <a>{this.state.countries[2].count}</a></li>
-                                <li>{this.state.countries[3].name} <a>{this.state.countries[3].count}</a></li>
-                                <li>{this.state.countries[4].name} <a>{this.state.countries[4].count}</a></li>
-                                <li>{this.state.countries[5].name} <a>{this.state.countries[5].count}</a></li>
-                                <li>{this.state.countries[6].name} <a>{this.state.countries[6].count}</a></li>
-                                <li>{this.state.countries[7].name} <a>{this.state.countries[7].count}</a></li>
-                                <li>{this.state.countries[8].name} <a>{this.state.countries[8].count}</a></li>
-                                <li>{this.state.countries[9].name} <a>{this.state.countries[9].count}</a></li>
+                                {this.renderLocation()}
                             </ol>
                         </div>
                         <div id="map"></div>

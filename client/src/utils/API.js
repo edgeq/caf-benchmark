@@ -24,7 +24,13 @@ export default {
 
   getLocation: function() {
       return axios.get("/api/location");
+  },
+
+  getActprojects: function() {
+      return axios.get("/api/actProjects");
   }
+
+
 
 
 	

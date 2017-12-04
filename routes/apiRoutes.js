@@ -79,8 +79,8 @@ module.exports = function(app) {
   
   //Get Submitted Today (Need to determine how to do this)
 
-  app.get("/api/subtoday", function(req, res) {
-    var dbQuery = "SELECT revision_id FROM node__field_state";
+  app.get("/api/actProjects", function(req, res) {
+    var dbQuery = "SELECT COUNT(*) AS subCount FROM node__field_state JOIN node_field_revision ON node_field_revision.vid = node__field_state.revision_id WHERE (field_state_value='project_finalized' OR field_state_value='project_archived' OR  field_state_value='project_in_progress') AND (changed>=unix_timestamp('2017-11-01') AND changed<=unix_timestamp('2017-12-01')) ORDER by changed DESC ";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
@@ -92,7 +92,7 @@ module.exports = function(app) {
 
   app.get("/api/totsub", function(req, res) {
 
-    var dbQuery = "SELECT COUNT(*) AS subCount FROM node__field_state WHERE field_state_value = 'project_finalized'";
+    var dbQuery = "SELECT COUNT(*) AS subCount FROM node__field_state JOIN node_field_revision ON node_field_revision.vid = node__field_state.revision_id WHERE (field_state_value='project_finalized' OR field_state_value='project_archived') AND changed>=unix_timestamp('2017-11-01') AND changed<=unix_timestamp('2017-12-01')";
 
     connection.query(dbQuery, function(err, result) {
       res.json(result);
@@ -115,8 +115,8 @@ module.exports = function(app) {
 
   //Age
   app.get("/api/age", function(req, res){
-    var dbQuery = "SELECT TIMESTAMPDIFF (YEAR, field_birthdate_value, CURDATE()) FROM user__field_birthdate AS AGE"
-  
+    var dbQuery = "SELECT TIMESTAMPDIFF (YEAR, field_birthdate_value, CURDATE()) FROM user__field_birthdate AS AGE";
+
      connection.query(dbQuery, function(err, result) {
       res.json(result);
       console.log(result)
