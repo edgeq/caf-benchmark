@@ -3,7 +3,7 @@
 html, body, #root, [data-reactroot] {
 	height: 94vh;
 	margin: 0px;
-	font-family: Avenir-Light;
+	font-family: Avenir-Light, Avenir Next, sans-serif;
 }
 body, a {
 	color: white;
@@ -28,11 +28,12 @@ nav {
 
 nav a {
 	color: rgb(216, 216, 216);
-	font-size: 34px;
+	font-size: 26px;
 }
 
 nav img {
 	max-height: 100%;
+	padding-bottom: 5px;
 }
 
 /* Sidebar */
@@ -78,17 +79,8 @@ nav img {
 
 /* Content Boxes */
 /* ==================================================== */
-
-#locationBox {
-	height: 47vh;
-	/* background: orange; */
-	padding:10px 10px 0;
-}
-
-#demographicsBox {
-	height: 47vh;
-	/* background: blueviolet; */
-	padding:10px 10px;
+.contentRow {
+	height: 50%;
 }
 
 .boxContent {
@@ -97,9 +89,118 @@ nav img {
 	height: 100%;
 	width: 100%;
 	padding: 10px;
+	border-radius: 2px;
 }
+
 .boxContent h3 {
 	color: white;
-	margin-left: 5px;
-	font-size: 18px;
+	font-size: 14px;
+}
+
+#locationBox {
+	/* background: orange; */
+	height: 100%;
+	padding:10px 10px 0;
+}
+
+#locationContent {
+	/* background: lightgreen; */
+	width: 100%; 
+	height: 92%;
+}
+
+#demographicsBox {
+	/* background: blueviolet; */
+	height: 100%;
+	padding:10px 5px 10px 10px;
+}
+
+#schoolsBox {
+	/* background: blueviolet; */
+	height: 100%;
+	padding:10px  10px 10px 5px;
+}
+
+#demographicsContent {
+	/* background: rgb(253, 126, 126); */
+	height: 92%;
+}
+
+#schoolsContent {
+	/* background: rgb(253, 126, 126); */
+	height: 92%;
+	color: white;
+	padding-top: 5px;
+}
+
+#schoolsContent ol {
+	width: 100%;
+}
+
+#schoolsContent ol h3 {
+	display: inline-block;
+	color: rgb(253, 126, 126);
+	margin-left: -15px;
+}
+
+#schoolsContent ol h4 {
+	display: inline-block;
+	font-size: 14px;
+	float: right;
+	margin-right: 20px;
+	color: rgb(253, 126, 126);
+}
+
+#schoolsContent ol li a {
+	float: right;
+	margin-right: 20px;
+	color: #ffdc5e;
+}
+
+
+/* Location Map */
+/* ==================================================== */
+#map {
+	height: 100%;
+	width: 75%;
+	float: right;
+}
+
+#countryRankings {
+	width: 25%;
+	margin: 10px 0 0 -10px;
+	float: left;
+	color: white;
+}
+
+#countryRankings ol h3 {
+	display: inline-block;
+	color: rgb(253, 126, 126);
+	margin-left: -15px;
+}
+
+#countryRankings ol h4 {
+	display: inline-block;
+	font-size: 14px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+	color: rgb(253, 126, 126);
+}
+
+#countryRankings ol li a {
+	float: right;
+	color: #ffdc5e;
+	margin-right: 20px;
+}
+
+/* Demographics */
+/* ==================================================== */
+#responseChart {
+	max-width: 270px;
+	max-height: 270px;
+	margin: 0 auto;
+	color: white;
+	/* margin-top: 60px; */
+	/* background: purple; */
 }

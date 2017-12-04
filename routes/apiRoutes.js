@@ -113,8 +113,17 @@ module.exports = function(app) {
     });
   });
 
-  //Need Route for User Age Need to figure out how to get from birthdate
+  //Age
+  app.get("/api/age", function(req, res){
+    var dbQuery = "SELECT TIMESTAMPDIFF (YEAR, field_birthdate_value, CURDATE()) FROM user__field_birthdate AS AGE"
+  
+     connection.query(dbQuery, function(err, result) {
+      res.json(result);
+      console.log(result)
 
+    });
+
+  });
 
 
 };
