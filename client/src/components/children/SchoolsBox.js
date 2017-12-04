@@ -8,7 +8,7 @@ class SchoolsBox extends Component {
     
     state = {
 		schools: [],
-        count: []
+        subCount: []
     };
 
     componentDidMount() {
@@ -29,7 +29,7 @@ class SchoolsBox extends Component {
         return (
             this.state.schools.map(function(school){
                 return (
-                    <li>{school.field_school_name_value} <a>{school['COUNT(*)']}</a></li>
+                    <li>{school.field_school_name_value} <a>{school['subCount']}</a></li>
                 )
             })
         )
