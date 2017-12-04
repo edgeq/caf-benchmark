@@ -5,7 +5,7 @@ import API from "../utils/API";
 class SideBar extends Component {
 
 	state = {
-		
+
 		totalUsers: ['totalUsers'],
 		activeUsers: ['activeUsers'],
 		submissions: ['submissions']
@@ -45,7 +45,7 @@ class SideBar extends Component {
 			})
 			.catch(err => console.log(err));
 	}
-	
+
 
 
 	render () {
@@ -66,13 +66,13 @@ class SideBar extends Component {
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
-						<p>Total Submissions</p>
+						<p>Active Projects</p>
 						<p className="sidebarNumber">{this.state.submissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
-						<p>Submissions Today</p>
+						<p>Finalized Projects</p>
 						<p className="sidebarNumber">{this.state.dailySubmissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
