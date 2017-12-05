@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-
-
-
-
 class LocationBox extends Component {
-    
+
     state = {
 		countries: [],
         subCount: []
@@ -14,7 +10,7 @@ class LocationBox extends Component {
 
      componentDidMount() {
         this.loadLocation();
-        
+
     }
 
     loadLocation = () => {
@@ -30,9 +26,9 @@ class LocationBox extends Component {
 
      renderLocation(){
         return (
-            this.state.countries.map(function(countries){
+            this.state.countries.map(function(countries, i ){
                 return (
-                    <li>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
+                    <li key= {i}>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
                 )
             })
         )
@@ -43,18 +39,18 @@ class LocationBox extends Component {
     render () {
         return (
             <div id="locationBox" className="animated fadeInUp col-sm-12">
-                <div className="boxContent">
-                    <h3>LOCATION</h3>
-                    <div id="locationContent">
-                        <div id="countryRankings">
-                            <ol>
-                                <h3>Country</h3> <h4>Count</h4>
-                                {this.renderLocation()}
-                            </ol>
-                        </div>
-                        <div id="map"></div>
-                    </div>
+              <div className="boxContent">
+                <h3>LOCATION</h3>
+                <div id="locationContent">
+                  <div id="countryRankings">
+                    <ol>
+                      <h3>Country</h3> <h4>Count</h4>
+                      {this.renderLocation()}
+                    </ol>
+                  </div>
+                  <div id="map"></div>
                 </div>
+              </div>
             </div>
         )
     };
