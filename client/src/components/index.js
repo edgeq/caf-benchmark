@@ -110,13 +110,13 @@ export default class App extends Component {
               {/* <Switch> */}
 
               {
-                !this.state.authed ?
-                  <Route path='/' exact component={Login} />
+                this.state.authed ?
+                  <PrivateRoute authed={this.state.authed} path='/' component={Dashboard} />
                 :
-                <PrivateRoute authed={this.state.authed} path='/' component={Dashboard} />
+                <Route path='/' exact component={Login} />
 
               }
-              
+
 
               <Route render={() => <h3>No Match</h3>} />
               {/* </Switch> */}
