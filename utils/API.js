@@ -13,10 +13,9 @@ mysql.createConnection({
   port: 3306,
   host: "localhost",
   user: "root",
-  password: "",
-  database: "caf_benchDB" //swap with caf_benchDB
-})
-;
+  password: "password",
+  database: "DD_2017" //swap with caf_benchDB
+});
 
 // Connect to the database
 connection.connect(function(err) {

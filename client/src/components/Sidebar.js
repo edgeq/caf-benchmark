@@ -5,7 +5,7 @@ import API from "../utils/API";
 class SideBar extends Component {
 
 	state = {
-		
+
 		totalUsers: ['totalUsers'],
 		activeUsers: ['activeUsers'],
 		submissions: ['submissions'],
@@ -46,6 +46,8 @@ class SideBar extends Component {
 			this.setState({ submissions: res.data[0].subCount})
 			})
 			.catch(err => console.log(err));
+
+
 	};
 
 	loadActprojects = () => {
@@ -58,13 +60,11 @@ class SideBar extends Component {
 	};
 
 
-	
-
 
 	render () {
 		return (
 			<div id="sidebar-wrapper" className="animated slideInLeft col-sm-3">
-				<div className="row">
+				{/* <div className="row"> */}
 					<div className="sidebarBox">
 						<h2>Overview</h2>
 						<p>Active Users</p>
@@ -79,18 +79,21 @@ class SideBar extends Component {
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
+
+
 						<p>Finalized Projects</p>
 						<p className="sidebarNumber">{this.state.submissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
+
 						<p>Active Projects</p>
 						<p className="sidebarNumber">{this.state.dailySubmissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 				</div>
-			</div>
+			// </div>
 		)
 	};
 };

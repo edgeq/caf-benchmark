@@ -15,13 +15,13 @@ class Content extends Component {
 	render () {
 		return (
 			<div id="content-wrapper" className="animated fadeIn col-sm-9">
-                <div className="row contentRow">
-                    <LocationBox />
-                </div>
-                <div className="row contentRow">
-                    <DemographicsBox />
-                    <SchoolsBox />
-                </div>
+				<div className="row contentRow">
+					<LocationBox />
+				</div>
+				<div className="row contentRow">
+					<DemographicsBox />
+					<SchoolsBox />
+				</div>
 			</div>
 		)
 	};
