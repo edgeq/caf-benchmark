@@ -1,4 +1,5 @@
-// import API from "../../src/utils/API";
+import React from "react";
+import API from "../../src/utils/API"
 
 loadLocation = () => {
     API.getLocation()
@@ -31,10 +32,10 @@ var citymap = {
 
 function initMap() {
     // Create the map.
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 1,
-            center: {lat: 30, lng: -5},
-            mapTypeId: 'terrain'
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 1,
+        center: {lat: 30, lng: -5},
+        mapTypeId: 'terrain'
     });
 
     // Construct the circle for each value in citymap.
@@ -53,3 +54,21 @@ function initMap() {
         });
     }
 }
+
+// export default LocationBox;
+
+// var ReactScriptLoaderModule = require('react-script-loader');
+// var ReactScriptLoaderMixin= ReactScriptLoaderModule.ReactScriptLoaderMixin;
+// var ReactScriptLoader= ReactScriptLoaderModule.ReactScriptLoader;
+
+// var scriptURL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyClKqKk96lqJzBjF99E7CGL_jxE5GtBn0A&callback=initMap';
+
+// // This function is called by the Google maps API after its initialization is
+// // complete.
+// // We need to define this function in the window scope to make it accessible
+// // to the Google maps script.
+// window.initializeMaps = function() {
+
+// 	// This triggers the onScriptLoaded method call on all mounted Map components.
+// 	ReactScriptLoader.triggerOnScriptLoaded(scriptURL);
+// }

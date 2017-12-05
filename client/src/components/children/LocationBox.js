@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Map from "./LocationMap";
 
 
-
-
+const countriesArr = [
+    {name: 'USA', count: '999'},
+    {name: 'China', count: '777'}, 
+    {name: 'Italy', count: '888'}, 
+    {name: 'France', count: '888'}, 
+    {name: 'Canada', count: '888'}, 
+    {name: 'Spain', count: '888'}, 
+    {name: 'UK', count: '888'}, 
+    {name: 'Aus', count: '888'}, 
+    {name: 'S. Korea', count: '888'}, 
+    {name: 'Japan', count: '888'}, 
+]
 
 class LocationBox extends Component {
-    
+
     state = {
 		countries: [],
         subCount: []
@@ -14,14 +25,14 @@ class LocationBox extends Component {
 
      componentDidMount() {
         this.loadLocation();
-        
+
     }
 
     loadLocation = () => {
         API.getLocation()
             .then(res => {
-            console.log(res)
-            this.setState({ countries: res.data })
+            console.log(res.data)
+            this.setState({ countries: res.data || [] })
             })
             .catch(err => console.log(err));
     };
@@ -30,9 +41,9 @@ class LocationBox extends Component {
 
      renderLocation(){
         return (
-            this.state.countries.map(function(countries){
+            this.state.countries.map(function(countries, i ){
                 return (
-                    <li>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
+                    <li key= {i}>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
                 )
             })
         )
@@ -52,7 +63,7 @@ class LocationBox extends Component {
                                 {this.renderLocation()}
                             </ol>
                         </div>
-                        <div id="map"></div>
+                        <Map />
                     </div>
                 </div>
             </div>
