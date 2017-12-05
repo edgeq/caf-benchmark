@@ -17,7 +17,7 @@ const countriesArr = [
 ]
 
 class LocationBox extends Component {
-    
+
     state = {
 		countries: [],
         subCount: []
@@ -25,7 +25,7 @@ class LocationBox extends Component {
 
      componentDidMount() {
         this.loadLocation();
-        
+
     }
 
     loadLocation = () => {
@@ -41,9 +41,9 @@ class LocationBox extends Component {
 
      renderLocation(){
         return (
-            this.state.countries.map(function(countries){
+            this.state.countries.map(function(countries, i ){
                 return (
-                    <li>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
+                    <li key= {i}>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
                 )
             })
         )
