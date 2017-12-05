@@ -47,9 +47,7 @@ class SideBar extends Component {
 			})
 			.catch(err => console.log(err));
 
-	}
 
-=======
 	};
 
 	loadActprojects = () => {
