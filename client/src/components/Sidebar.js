@@ -8,7 +8,8 @@ class SideBar extends Component {
 
 		totalUsers: ['totalUsers'],
 		activeUsers: ['activeUsers'],
-		submissions: ['submissions']
+		submissions: ['submissions'],
+		dailySubmissions: ['dailySubmissions'],
 
 	  };
 
@@ -16,6 +17,7 @@ class SideBar extends Component {
 		this.loadUsers();
 		this.loadActusers();
 		this.loadTotsubs();
+		this.loadActprojects();
 	}
 
 	loadUsers = () => {
@@ -44,7 +46,20 @@ class SideBar extends Component {
 			this.setState({ submissions: res.data[0].subCount})
 			})
 			.catch(err => console.log(err));
+
 	}
+
+=======
+	};
+
+	loadActprojects = () => {
+		API.getActprojects()
+			.then(res => {
+			console.log(res)
+			this.setState({ dailySubmissions: res.data[0].subCount})
+			})
+			.catch(err => console.log(err));
+	};
 
 
 
@@ -66,13 +81,16 @@ class SideBar extends Component {
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
-						<p>Active Projects</p>
+
+
+						<p>Finalized Projects</p>
 						<p className="sidebarNumber">{this.state.submissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>
 					<div className="separator"></div>
 					<div className="sidebarBox">
-						<p>Finalized Projects</p>
+
+						<p>Active Projects</p>
 						<p className="sidebarNumber">{this.state.dailySubmissions}</p>
 					</div>
 					<div className="sidebarGraph"></div>

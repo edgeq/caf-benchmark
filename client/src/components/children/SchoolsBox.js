@@ -2,25 +2,38 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 
 
-const schoolsArr = [
-    {name: 'IIT', count: '999'},
-    {name: 'University of Chicago', count: '777'}, 
-    {name: 'UIC', count: '888'}, 
-    {name: 'School', count: '888'}, 
-    {name: 'School', count: '888'}, 
-    {name: 'School', count: '888'}, 
-    {name: 'School', count: '888'}, 
-    {name: 'School', count: '888'}, 
-    {name: 'School', count: '888'}, 
-    {name: 'School', count: '888'}, 
-]
+
 
 class SchoolsBox extends Component {
     
     state = {
-		schools: schoolsArr
+		schools: [],
+        subCount: []
     };
 
+    componentDidMount() {
+        this.loadSchools();
+        
+    }
+
+    loadSchools = () => {
+        API.getActschools()
+            .then(res => {
+            console.log(res)
+            this.setState({ schools: res.data })
+            })
+            .catch(err => console.log(err));
+    };
+
+    renderSchools(){
+        return (
+            this.state.schools.map(function(school){
+                return (
+                    <li>{school.field_school_name_value} <a>{school['subCount']}</a></li>
+                )
+            })
+        )
+    }
 
     render () {
         return (
@@ -31,16 +44,7 @@ class SchoolsBox extends Component {
                         <div className="row">
                             <ol>
                                 <h3>School</h3><h4>Student Count</h4>
-                                <li>{this.state.schools[0].name} <a>{this.state.schools[0].count}</a></li>
-                                <li>{this.state.schools[1].name} <a>{this.state.schools[1].count}</a></li>
-                                <li>{this.state.schools[2].name} <a>{this.state.schools[2].count}</a></li>
-                                <li>{this.state.schools[3].name} <a>{this.state.schools[3].count}</a></li>
-                                <li>{this.state.schools[4].name} <a>{this.state.schools[4].count}</a></li>
-                                <li>{this.state.schools[5].name} <a>{this.state.schools[5].count}</a></li>
-                                <li>{this.state.schools[6].name} <a>{this.state.schools[6].count}</a></li>
-                                <li>{this.state.schools[7].name} <a>{this.state.schools[7].count}</a></li>
-                                <li>{this.state.schools[8].name} <a>{this.state.schools[8].count}</a></li>
-                                <li>{this.state.schools[9].name} <a>{this.state.schools[9].count}</a></li>
+                                {this.renderSchools()}
                             </ol>
                         </div>
                     </div>
