@@ -3,15 +3,14 @@
 html, body, #root, [data-reactroot] {
 	height: 94vh;
 	margin: 0px;
-	/* overflow: hidden; */
-	font-family: Avenir-Light;
+	font-family: Avenir-Light, Avenir Next, sans-serif;
 }
 body, a {
 	color: white;
 }
 
 body {
-	background: linear-gradient(rgb(78, 78, 78), rgb(58, 58, 58)) no-repeat center center fixed; 
+	background: linear-gradient(#211d1e, #2e2c2d) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -29,32 +28,30 @@ nav {
 
 nav a {
 	color: rgb(216, 216, 216);
-	font-size: 34px;
+	font-size: 26px;
 }
 
 nav img {
 	max-height: 100%;
+	padding-bottom: 5px;
 }
 
 /* Sidebar */
 /* ==================================================== */
-#sidebar {
+#sidebar-wrapper {
 	background: linear-gradient(#211d1e, #cb2026);
-	width: 30%;
-	max-width: 300px;
-	min-width: 200px;
-	top: 0; left: 0;
-	min-height: 100%;
+	/* background: white; */
+	height: 94vh;
 	padding: 25px 0 0 20px;
 	font-size: 22px;
 }
+
 
 .separator {
 	height: 1px;
 	width: 90%;
 	margin: 10px 0;
 	background: rgb(219, 219, 219);
-	/* float: right; */
 	margin: 0 10px 0 0;
 }
 
@@ -75,3 +72,165 @@ nav img {
 	margin: -10px 0 10px 0;
 	border-radius: 5px;
 }
+
+/* Content */
+/* ==================================================== */
+#content-wrapper {
+	height: 94vh;
+}
+
+/* Content Boxes */
+/* ==================================================== */
+.contentRow {
+	height: 50%;
+}
+
+.loginBoxContent {
+	background: rgb(61, 61, 61);
+	/* margin: 10px auto; */
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	border-radius: 2px;
+	margin: auto;
+	display: flex;
+}
+
+.boxContent {
+	background: rgb(61, 61, 61);
+	/* margin: 10px auto; */
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	border-radius: 2px;
+}
+
+.boxContent h3 {
+	color: white;
+	font-size: 14px;
+}
+
+#locationBox {
+	/* background: orange; */
+	height: 100%;
+	padding:10px 10px 0;
+}
+
+#locationContent {
+	/* background: lightgreen; */
+	width: 100%;
+	height: 92%;
+}
+
+#demographicsBox {
+	/* background: blueviolet; */
+	height: 100%;
+	padding:10px 5px 10px 10px;
+}
+
+#schoolsBox {
+	/* background: blueviolet; */
+	height: 100%;
+	padding:10px  10px 10px 5px;
+}
+
+#demographicsContent {
+	/* background: rgb(253, 126, 126); */
+	height: 92%;
+}
+
+#schoolsContent {
+	/* background: rgb(253, 126, 126); */
+	height: 92%;
+	color: white;
+	padding-top: 5px;
+}
+
+#schoolsContent ol {
+	width: 100%;
+}
+
+
+#schoolsContent ol {
+	background: -webkit-linear-gradient(#ffdc5e, white);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#schoolsContent ol h3 {
+	display: inline-block;
+	color: rgb(253, 126, 126);
+	margin-left: -15px;
+}
+
+#schoolsContent ol h4 {
+	display: inline-block;
+	font-size: 14px;
+	float: right;
+	margin-right: 20px;
+	color: rgb(253, 126, 126);
+}
+
+#schoolsContent ol li a {
+	float: right;
+	margin-right: 20px;
+	color: #ffdc5e;
+}
+
+
+/* Location Map */
+/* ==================================================== */
+#map {
+	height: 100%;
+	width: 75%;
+	float: right;
+}
+
+#countryRankings {
+	width: 25%;
+	margin: 10px 0 0 -10px;
+	float: left;
+	color: white;
+}
+
+#countryRankings ol h3 {
+	display: inline-block;
+	color: rgb(253, 126, 126);
+	margin-left: -15px;
+}
+
+#countryRankings ol h4 {
+	display: inline-block;
+	font-size: 14px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+	color: rgb(253, 126, 126);
+}
+
+#countryRankings ol li a {
+	float: right;
+	color: #ffdc5e;
+	margin-right: 20px;
+}
+
+/* Demographics */
+/* ==================================================== */
+#responseChart {
+	max-width: 270px;
+	max-height: 270px;
+	margin: 0 auto;
+	color: white;
+	/* margin-top: 60px; */
+	/* background: purple; */
+}
+
+
+/* Media Queries */
+/* ==================================================== */
+/* @media only screen and (max-width: 900px) {
+    #sidebar-wrapper {
+		background: lightblue ;
+		font-size: 22px;
+    }
+} */
