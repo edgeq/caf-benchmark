@@ -30,9 +30,9 @@ function PrivateRoute({
       {...rest}
       render={(props) => authed === true
         ? <Component {...props} />
-        : <Redirect to={{pathname: '/dashboard', state: {from: props.location}}} />
-  }
-  />
+        : <Redirect to={{pathname: '/login', state: {from: props.location}}} />
+      }
+    />
 )
 }
 
@@ -45,7 +45,7 @@ function PublicRoute({
     <Route
       {...rest}
       render={(props) => authed === false
-        ? <Component {...props} />: <Redirect to='/' />
+        ? <Component {...props} />: <Redirect to='/dashboard' />
   }
   />
 )
@@ -108,9 +108,16 @@ export default class App extends Component {
             <div className="container-fluid">
               {/* <div className="row"> */}
               {/* <Switch> */}
-              <Route path='/' exact component={Login} />
 
-              <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
+              {
+                !this.state.authed ?
+                  <Route path='/' exact component={Login} />
+                :
+                <PrivateRoute authed={this.state.authed} path='/' component={Dashboard} />
+
+              }
+              
+
               <Route render={() => <h3>No Match</h3>} />
               {/* </Switch> */}
               {/* </div> */}
