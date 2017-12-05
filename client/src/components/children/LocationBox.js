@@ -3,11 +3,18 @@ import API from "../../utils/API";
 import Map from "./LocationMap";
 
 
-const countryMap = [
-    {
-        field_address_location_country_code: 'US',
-    },
-  ];
+const countriesArr = [
+    {name: 'USA', count: '999'},
+    {name: 'China', count: '777'}, 
+    {name: 'Italy', count: '888'}, 
+    {name: 'France', count: '888'}, 
+    {name: 'Canada', count: '888'}, 
+    {name: 'Spain', count: '888'}, 
+    {name: 'UK', count: '888'}, 
+    {name: 'Aus', count: '888'}, 
+    {name: 'S. Korea', count: '888'}, 
+    {name: 'Japan', count: '888'}, 
+]
 
 class LocationBox extends Component {
     
