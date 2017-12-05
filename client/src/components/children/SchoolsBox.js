@@ -20,7 +20,7 @@ class SchoolsBox extends Component {
         API.getActschools()
             .then(res => {
             console.log(res)
-            this.setState({ schools: res.data })
+            this.setState({ schools: res.data  || []  })
             })
             .catch(err => console.log(err));
     };

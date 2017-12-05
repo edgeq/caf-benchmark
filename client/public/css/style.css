@@ -40,10 +40,12 @@ nav img {
 /* ==================================================== */
 #sidebar-wrapper {
 	background: linear-gradient(#211d1e, #cb2026);
+	/* background: white; */
 	height: 94vh;
 	padding: 25px 0 0 20px;
 	font-size: 22px;
 }
+
 
 .separator {
 	height: 1px;
@@ -148,6 +150,13 @@ nav img {
 	width: 100%;
 }
 
+
+#schoolsContent ol {
+	background: -webkit-linear-gradient(#ffdc5e, white);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 #schoolsContent ol h3 {
 	display: inline-block;
 	color: rgb(253, 126, 126);
@@ -215,3 +224,13 @@ nav img {
 	/* margin-top: 60px; */
 	/* background: purple; */
 }
+
+
+/* Media Queries */
+/* ==================================================== */
+/* @media only screen and (max-width: 900px) {
+    #sidebar-wrapper {
+		background: lightblue ;
+		font-size: 22px;
+    }
+} */

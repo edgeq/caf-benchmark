@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Map from "./LocationMap";
 
 
-
-
+const countryMap = [
+    {
+        field_address_location_country_code: 'US',
+    },
+  ];
 
 class LocationBox extends Component {
     
@@ -20,8 +24,8 @@ class LocationBox extends Component {
     loadLocation = () => {
         API.getLocation()
             .then(res => {
-            console.log(res)
-            this.setState({ countries: res.data })
+            console.log(res.data)
+            this.setState({ countries: res.data || [] })
             })
             .catch(err => console.log(err));
     };
@@ -52,7 +56,7 @@ class LocationBox extends Component {
                                 {this.renderLocation()}
                             </ol>
                         </div>
-                        <div id="map"></div>
+                        <Map />
                     </div>
                 </div>
             </div>

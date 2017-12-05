@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import DonutWithText from "./DemographicsBox/DemographicsChart";
 
 
 class DemographicsBox extends Component {
@@ -14,7 +15,7 @@ class DemographicsBox extends Component {
                 <div className="boxContent">
                     <h3>DEMOGRAPHICS</h3>
                     <div id="demographicsContent">
-                        <canvas id="responseChart"></canvas>
+                        <DonutWithText />
                     </div>
                 </div>
             </div>
