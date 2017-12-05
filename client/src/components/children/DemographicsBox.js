@@ -3,7 +3,7 @@ import API from "../../utils/API";
 
 
 class DemographicsBox extends Component {
-    
+
     state = {
         };
 

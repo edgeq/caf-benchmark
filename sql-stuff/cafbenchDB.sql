@@ -74,3 +74,13 @@ VALUES (01, 01-02-2000),
 (08, 07-08-2003),
 (09, 08-09-2002)
 ;
+
+CREATE TABLE `node_field_revision` (
+  `vid` int(10) unsigned NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `uid` int(10) unsigned NOT NULL COMMENT 'The ID of the target entity.',
+  `created` int(11) DEFAULT NULL,
+  `changed` int(11) DEFAULT NULL,
+  PRIMARY KEY (`vid`),
+  KEY (`uid`)
+)
