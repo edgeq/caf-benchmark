@@ -8,7 +8,7 @@ function setErrorMsg(error) {
 }
 
 export default class Login extends Component {
-  state = { loginMessage: null }
+  state = { loginMessage: "Log in to access Benchmark" }
   handleSubmit = (e) => {
     e.preventDefault()
     login(this.email.value, this.pw.value)
