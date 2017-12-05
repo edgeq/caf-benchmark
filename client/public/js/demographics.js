@@ -31,7 +31,8 @@ $(document).ready(function() {
                     labels : {
                       fontColor : '#ffffff',
                       fontFamily: "Avenir"
-                    }
+                    },
+                    position: 'bottom'
                 }
             }
         });

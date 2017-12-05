@@ -70,7 +70,7 @@ CREATE TABLE `user__field_school` (
   `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
   `revision_id` int(10) unsigned NOT NULL COMMENT 'The entity revision id this data is attached to, which for an unversioned entity type is the same as the entity id',
   `field_school_target_id` int(10) unsigned NOT NULL COMMENT 'The ID of the target entity.',
-  PRIMARY KEY (`field_school_target_id`),
+  PRIMARY KEY (`entity_id`),
   KEY `revision_id` (`revision_id`),
   KEY `field_school_target_id` (`field_school_target_id`)
   );
@@ -99,32 +99,36 @@ CREATE TABLE `school__field_address_location` (
   KEY `field_address_location_administrative_area` (`field_address_location_administrative_area`(191))
   );
 
-INSERT INTO school__field_address_location (entity_id, revision_id, field_address_location_address_line1, field_address_location_locality, field_address_location_administrative_area, field_address_location_postal_code, field_address_location_country_code)
+INSERT INTO school__field_address_location (entity_id, revision_id, 
+field_address_location_address_line1, 
+field_address_location_locality, 
+field_address_location_administrative_area, 
+field_address_location_postal_code, 
+field_address_location_country_code)
 VALUES (02, 02, "3212 WEST GEORGE ST", "CHICAGO", "IL", "60618-7529", "US" ),
 (03, 03, "10115 SOUTH PRAIRIE AVE", "CHICAGO", "IL", "60628-2135", "US" ),
-(04, 04, "1420 WEST GRACE ST", "CHICAGO", "IL", "60613-2802", "US" );
-(05, 05, "123 abc ST","Atlanta","GA","40434-4567","US");
-(06, 06, "23 ASFK  LANE","Berlin","434348","GR");
-(07, 07, "468 juou place","Paris","389277","FR");
+(04, 04, "1420 WEST GRACE ST", "CHICAGO", "IL", "60613-2802", "US" ),
+(05, 05, "123 abc ST","Atlanta","GA","40434-4567","US"),
+(06, 06, "23 ASFK  LANE","Berlin", "GR", "434348","GR"),
+(07, 07, "468 juou place","Paris", "FR", "389277","FR");
 
 CREATE TABLE `user__field_birthdate` (
   `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
-  `field_birthdate_value` date() NOT NULL COMMENT 'The date value.',
+  `field_birthdate_value` DATE NOT NULL COMMENT 'The date value.',
   PRIMARY KEY (`entity_id`),
-  KEY `revision_id` (`revision_id`),
   KEY `field_birthdate_value` (`field_birthdate_value`)
   );
 
 INSERT INTO user__field_birthdate (entity_id, field_birthdate_value) 
-VALUES (10, '2007,02,08');
-(01,'2000,01,01');
-(02,'2000,01,01');
-(03,'2001,02,03');
-(04,'2002,03,04');
-(05,'2003,04,05');
-(06,'2003,07,08');
-(07,'2000,06,07');
-(08,'2003,07,03');
+VALUES (10, '2007,02,08'),
+(01,'2000,01,01'),
+(02,'2000,01,01'),
+(03,'2001,02,03'),
+(04,'2002,03,04'),
+(05,'2003,04,05'),
+(06,'2003,07,08'),
+(07,'2000,06,07'),
+(08,'2003,07,03'),
 (09,'2002,08,09');
 
 
@@ -140,13 +144,13 @@ CREATE TABLE `node_field_revision` (
 );
 
 INSERT INTO node_field_revision (vid, title, uid, created, changed)
-VALUES (1,'Project 1',1234,1508089405,1511199805);
-(2,'Project 2',2345,1511199805,1511199805);
-(3,'Project 3',3456,1511199805,1511977405);
-(4,'Project 4',4567,1512150205,1512150205);
-(5,'Project 5',5678,1512150205,1512409405);
-(6,'Project 6',2134,1509644605,1510508605);
-(7,'Project 7',1458,1510940605,1510508605);
-(8,'Project 8',2675,1512150205,1512150205);
-(9,'Project 9',1735,1509558205,1512236605);
+VALUES (1,'Project 1',1234,1508089405,1511199805),
+(2,'Project 2',2345,1511199805,1511199805),
+(3,'Project 3',3456,1511199805,1511977405),
+(4,'Project 4',4567,1512150205,1512150205),
+(5,'Project 5',5678,1512150205,1512409405),
+(6,'Project 6',2134,1509644605,1510508605),
+(7,'Project 7',1458,1510940605,1510508605),
+(8,'Project 8',2675,1512150205,1512150205),
+(9,'Project 9',1735,1509558205,1512236605),
 (10,'Project 10',2157,1509903805,1512063805);
