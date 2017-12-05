@@ -105,15 +105,15 @@ export default class App extends Component {
                 </li>
               </ul>
             </nav>
-            <div className="container">
-              <div className="row">
-                <Switch>
-                  <Route path='/' exact component={Login} />
+            <div className="container-fluid">
+              {/* <div className="row"> */}
+              <Switch>
+                <Route path='/' exact component={Login} />
 
-                  <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
-                  <Route render={() => <h3>No Match</h3>} />
-                </Switch>
-              </div>
+                <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
+                <Route render={() => <h3>No Match</h3>} />
+              </Switch>
+              {/* </div> */}
             </div>
           </div>
         </BrowserRouter>

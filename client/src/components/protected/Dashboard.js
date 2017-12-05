@@ -7,9 +7,10 @@ export default class Dashboard extends Component {
   render () {
     return (
       <div className="container-fluid">
-
-        <SideBar />
-        <Content />
+        <div className="row">
+          <SideBar />
+          <Content />
+        </div>
       </div>
     )
   }

@@ -51,7 +51,7 @@ class SideBar extends Component {
 	render () {
 		return (
 			<div id="sidebar-wrapper" className="animated slideInLeft col-sm-3">
-				<div className="row">
+				{/* <div className="row"> */}
 					<div className="sidebarBox">
 						<h2>Overview</h2>
 						<p>Active Users</p>
@@ -77,7 +77,7 @@ class SideBar extends Component {
 					</div>
 					<div className="sidebarGraph"></div>
 				</div>
-			</div>
+			// </div>
 		)
 	};
 };
