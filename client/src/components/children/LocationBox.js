@@ -9,7 +9,7 @@ class LocationBox extends Component {
     
     state = {
 		countries: [],
-        count: []
+        subCount: []
     };
 
      componentDidMount() {
@@ -32,7 +32,7 @@ class LocationBox extends Component {
         return (
             this.state.countries.map(function(countries){
                 return (
-                    <li>{countries.field_address_location_country_code} <a>{countries['COUNT(*)']}</a></li>
+                    <li>{countries.field_address_location_country_code} <a>{countries['subCount']}</a></li>
                 )
             })
         )
