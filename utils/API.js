@@ -7,7 +7,7 @@ mysql.createConnection({
   host: "otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
   user: "laczbspa3uwaxq5v",
   password: "dehsq7lkj7980js5",
-  database: "caf_benchDB"
+  database: "iihcxxf21iuuxzv3" //jawsdb creates a schema for you. and that's what you have to use.
 }) :
 mysql.createConnection({
   port: 3306,
