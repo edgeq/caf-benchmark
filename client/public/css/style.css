@@ -10,7 +10,7 @@ body, a {
 }
 
 body {
-	background: linear-gradient(#211d1e, #2e2c2d) no-repeat center center fixed;
+	background: linear-gradient(#cfcfcf, #a8a8a8) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -20,10 +20,11 @@ body {
 /* Navbar */
 /* ==================================================== */
 nav {
-	background: #211d1e;
+	background: #373334;
 	height: 6vh;
 	font-size: 20px;
 	padding: 0 0 0 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 nav a {
@@ -36,41 +37,93 @@ nav img {
 	padding-bottom: 5px;
 }
 
+nav .btn {
+	background: #cb2026;
+	font-size: 12px;
+}
+
+.navbar-brand a {
+	color: #eeeeee;
+}
+
 /* Sidebar */
 /* ==================================================== */
 #sidebar-wrapper {
-	background: linear-gradient(#211d1e, #cb2026);
-	/* background: white; */
+	/* background: linear-gradient(#211d1e, #cb2026); */
+	background: white;
 	height: 94vh;
-	padding: 25px 0 0 20px;
+	padding: 5px 0 0 0;
 	font-size: 22px;
-}
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-delay: .3s;
+	
+	background: -webkit-linear-gradient(225deg, #cb2026, #9b1c23);
+	color:white;
 
+	/* -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	background: -webkit-linear-gradient(#cb2026, #ae1f24); */
+	
+}
 
 .separator {
 	height: 1px;
-	width: 90%;
-	margin: 10px 0;
+	width: 100%;
+	margin: 5px 0;
 	background: rgb(219, 219, 219);
 	margin: 0 10px 0 0;
 }
 
 .sidebarBox {
-	color: white;
-	margin: 20px 0 0 0;
-}
-.sidebarNumber {
-	font-size: 40px;
-	margin: -30px 0 0 0;
-	color: rgb(255, 255, 255);
+	/* color: white; */
+	margin: 12px 0 0 0;
+    animation-delay: .4s;
 }
 
-.sidebarGraph {
-	width: 90%;
+#activeUsersBox {
+    animation-delay: .8s;
+}
+
+#totalUsersBox {
+    animation-delay: 1s;
+}
+
+#finalizedProjectsBox {
+    animation-delay: 1.2s;
+}
+
+#activeProjectsBox {
+    animation-delay: 1.4s;
+}
+
+#activeUsersGraph, 
+#totalUsersGraph, 
+#finalizedProjectsGraph, 
+#activeProjectsGraph {
+	margin-right: 20px;
+}
+
+.sidebarTitle {
+	font-size: 20px;
+	display: inline;
+}
+
+.sidebarNumber {
+	font-size: 28px;
+	margin: -8px 20px 0 0;
+	/* color: rgb(255, 255, 255); */
+	display: inline;
+	float: right;
+}
+
+.graph {
+	width: 80%;
 	height: 50px;
-	background: rgba(255, 255, 255, 0.466);
+	background: rgba(244, 245, 245, 1);
 	margin: -10px 0 10px 0;
-	border-radius: 5px;
+	padding: 10px;
+	border-radius: 4px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Content */
@@ -86,7 +139,7 @@ nav img {
 }
 
 .loginBoxContent {
-	background: rgb(61, 61, 61);
+	background: #373334;
 	/* margin: 10px auto; */
 	height: 100%;
 	width: 100%;
@@ -97,12 +150,20 @@ nav img {
 }
 
 .boxContent {
-	background: rgb(61, 61, 61);
+	background: #373334;
 	/* margin: 10px auto; */
 	height: 100%;
 	width: 100%;
 	padding: 10px;
-	border-radius: 2px;
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	font-size: 14px;
+	
+    /* border-style: solid;
+	border-width: 1px; 
+	border-color: #9b1c23;
+	border-top-style: none;
+    border-right-style: none; */
 }
 
 .boxContent h3 {
@@ -113,7 +174,8 @@ nav img {
 #locationBox {
 	/* background: orange; */
 	height: 100%;
-	padding:10px 10px 0;
+	padding:10px 0 0 10px ;
+    animation-delay: 1.6s;
 }
 
 #locationContent {
@@ -126,12 +188,14 @@ nav img {
 	/* background: blueviolet; */
 	height: 100%;
 	padding:10px 5px 10px 10px;
+    animation-delay: 2s;
 }
 
 #schoolsBox {
 	/* background: blueviolet; */
 	height: 100%;
-	padding:10px  10px 10px 5px;
+	padding:10px 0 10px 5px;
+    animation-delay: 2.4s;
 }
 
 #demographicsContent {
@@ -139,42 +203,41 @@ nav img {
 	height: 92%;
 }
 
-#schoolsContent {
+#schoolRankings {
 	/* background: rgb(253, 126, 126); */
 	height: 92%;
 	color: white;
 	padding-top: 5px;
 }
 
-#schoolsContent ol {
+#schoolRankings ol {
 	width: 100%;
 }
 
 
-#schoolsContent ol {
-	background: -webkit-linear-gradient(#ffdc5e, white);
+#schoolRankings ol {
+	background: -webkit-linear-gradient(white, #fcb0b8);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
-#schoolsContent ol h3 {
+#schoolRankings h3 {
 	display: inline-block;
-	color: rgb(253, 126, 126);
-	margin-left: -15px;
+	color: #fce28c;
+	margin-left: 15px;
 }
 
-#schoolsContent ol h4 {
+#schoolRankings h4 {
 	display: inline-block;
 	font-size: 14px;
 	float: right;
 	margin-right: 20px;
-	color: rgb(253, 126, 126);
+	color: #fce28c;
 }
 
-#schoolsContent ol li a {
-	float: right;
+#schoolRankings ol li a {
+	float: right !important;
 	margin-right: 20px;
-	color: #ffdc5e;
 }
 
 
@@ -184,6 +247,7 @@ nav img {
 	height: 100%;
 	width: 75%;
 	float: right;
+    animation-delay: 3.8s;
 }
 
 #countryRankings {
@@ -193,26 +257,31 @@ nav img {
 	color: white;
 }
 
-#countryRankings ol h3 {
+#countryRankings h3 {
 	display: inline-block;
-	color: rgb(253, 126, 126);
-	margin-left: -15px;
+	color: #fce28c;
+	margin-left: 15px;
 }
 
-#countryRankings ol h4 {
+#countryRankings h4 {
 	display: inline-block;
 	font-size: 14px;
 	float: right;
 	margin-right: 20px;
-	margin-top: 5px;
-	color: rgb(253, 126, 126);
+	color: #fce28c;
 }
 
 #countryRankings ol li a {
 	float: right;
-	color: #ffdc5e;
 	margin-right: 20px;
 }
+
+#countryRankings ol {
+	background: -webkit-linear-gradient(white, #fcb0b8);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 
 /* Demographics */
 /* ==================================================== */
@@ -228,9 +297,8 @@ nav img {
 
 /* Media Queries */
 /* ==================================================== */
-/* @media only screen and (max-width: 900px) {
+/* @media only screen and (max-width: 575px) {
     #sidebar-wrapper {
 		background: lightblue ;
-		font-size: 22px;
     }
 } */

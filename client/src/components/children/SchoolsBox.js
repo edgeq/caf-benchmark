@@ -35,15 +35,13 @@ class SchoolsBox extends Component {
     render () {
         return (
             <div id="schoolsBox" className="animated fadeInUp col-sm-6">
-              <div className="boxContent">
-                <h3>SCHOOLS</h3>
-                <div id="schoolsContent" className="container-fluid">
-                        <div className="row">
-                            <ol>
-                                <h3>School</h3><h4>Student Count</h4>
-                                {this.renderSchools()}
-                            </ol>
-                        </div>
+                <div className="boxContent">
+                    <h3>SCHOOLS</h3>
+                    <div id="schoolRankings" className="container-fluid">
+                        <h3>School</h3> <h4>User Count</h4>
+                        <ol>
+                            {this.renderSchools()}
+                        </ol>
                     </div>
                 </div>
             </div>

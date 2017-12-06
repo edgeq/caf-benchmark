@@ -80,10 +80,10 @@ export default class App extends Component {
   render() {
 
     return this.state.loading === true ? <h1>Loading</h1> : (
-      <div className="container-fluid">
+      <div className="">
         <BrowserRouter>
           <div>
-            <nav className="navbar navbar-inverse bg-inverse animated slideInLeft col-sm-12">
+            <nav className="navbar navbar-inverse bg-inverse animated slideInDown col-sm-12">
               <div className="navbar-brand">
                 <Link to="/dashboard"><img src="img/logo_caf_icon_white.png" href="#index.html" height="30px" alt="CAF Benchmark"></img> Benchmark</Link>
               </div>
@@ -118,7 +118,6 @@ export default class App extends Component {
               }
 
 
-              <Route render={() => <h3>No Match</h3>} />
               {/* </Switch> */}
               {/* </div> */}
             </div>

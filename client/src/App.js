@@ -18,7 +18,6 @@ class App extends Component {
           {/* <div className="row">
             <SideBar />
           <Content /> */}
-          </div>
         </div>
       </div>
     );

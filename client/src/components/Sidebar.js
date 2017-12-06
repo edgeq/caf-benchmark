@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import ActiveUsersGraph from "./Sidebar/ActiveUsersGraph";
+import TotalUsersGraph from "./Sidebar/TotalUsersGraph";
+import FinalizedProjectsGraph from "./Sidebar/FinalizedProjectsGraph";
+import ActiveProjectsGraph from "./Sidebar/ActiveProjectsGraph";
+
 
 import API from "../utils/API";
 
@@ -63,37 +68,42 @@ class SideBar extends Component {
 
 	render () {
 		return (
-			<div id="sidebar-wrapper" className="animated slideInLeft col-sm-3">
-				{/* <div className="row"> */}
-					<div className="sidebarBox">
-						<h2>Overview</h2>
-						<p>Active Users</p>
+			<div id="sidebar-wrapper" className="animated fadeInLeftBig col-sm-3">
+				<div className="container-fluid">
+					<h2>Overview</h2>
+
+					<div className="sidebarBox animated slideInLeft" id="activeUsersBox">
+						<p className="sidebarTitle">Active Users</p>
 						<p className="sidebarNumber">{this.state.activeUsers}</p>
+						<ActiveUsersGraph />
 					</div>
-					<div className="sidebarGraph"></div>
+
 					<div className="separator"></div>
-					<div className="sidebarBox">
-						<p>Total Users</p>
+
+					<div className="sidebarBox animated slideInLeft" id="totalUsersBox">
+						<p className="sidebarTitle">Total Users</p>
 						<p className="sidebarNumber">{this.state.totalUsers}</p>
+						<TotalUsersGraph />
 					</div>
-					<div className="sidebarGraph"></div>
+
 					<div className="separator"></div>
-					<div className="sidebarBox">
 
-
-						<p>Finalized Projects</p>
+					<div className="sidebarBox animated slideInLeft" id="finalizedProjectsBox">
+						<p className="sidebarTitle">Finalized Projects</p>
 						<p className="sidebarNumber">{this.state.submissions}</p>
+						<FinalizedProjectsGraph />
 					</div>
-					<div className="sidebarGraph"></div>
-					<div className="separator"></div>
-					<div className="sidebarBox">
 
-						<p>Active Projects</p>
+					<div className="separator"></div>
+
+					<div className="sidebarBox animated slideInLeft" id="activeProjectsBox">
+						<p className="sidebarTitle">Active Projects</p>
 						<p className="sidebarNumber">{this.state.dailySubmissions}</p>
+						<ActiveProjectsGraph />
 					</div>
-					<div className="sidebarGraph"></div>
+
 				</div>
-			// </div>
+			</div>
 		)
 	};
 };
