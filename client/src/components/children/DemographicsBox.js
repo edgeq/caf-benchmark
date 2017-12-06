@@ -51,7 +51,7 @@ class DemographicsBox extends Component {
         return (
             <div id="demographicsBox" className="animated fadeInUp col-sm-6">
                 <div className="boxContent">
-                    <h3>DEMOGRAPHICS</h3>
+                    <h3>DEMOGRAPHICS - USER AGE</h3>
                     <div id="demographicsContent">
                         <DonutWithText />
                     </div>

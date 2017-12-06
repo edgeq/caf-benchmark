@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Map from "./LocationMap";
+import Map from "./LocationBox/LocationMap";
 
 
 const countriesArr = [
@@ -55,11 +55,11 @@ class LocationBox extends Component {
         return (
             <div id="locationBox" className="animated fadeInUp col-sm-12">
                 <div className="boxContent">
-                    <h3>LOCATION</h3>
+                    <h3>USER LOCATIONS</h3>
                     <div id="locationContent">
                         <div id="countryRankings">
+                            <h3>Country</h3> <h4>User Count</h4>
                             <ol>
-                                <h3>Country</h3> <h4>Count</h4>
                                 {this.renderLocation()}
                             </ol>
                         </div>

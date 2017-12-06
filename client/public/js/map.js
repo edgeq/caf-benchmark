@@ -1,14 +1,7 @@
 import React from "react";
 import API from "../../src/utils/API"
 
-loadLocation = () => {
-    API.getLocation()
-        .then(res => {
-        console.log("RES*********", res)
-        // this.setState({ totalUsers: res.data[0].userCount})
-        })
-        .catch(err => console.log(err));
-};
+
 
 // First, create an object containing LatLng and population for each city.
 var citymap = {

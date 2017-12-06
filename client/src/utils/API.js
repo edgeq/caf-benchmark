@@ -1,39 +1,47 @@
 import axios from "axios";
 
 export default {
-  // Gets all users
-  getUsers: function() {
-    return axios.get("/api/totusers");
+    // Gets all users
+    getUsers: function() {
+        return axios.get("/api/totusers");
+    },
 
-  },
+    getActusers: function() {
+        return axios.get("/api/actusers");
+    },
 
-  getActusers: function() {
-  	return axios.get("/api/actusers");
+    getTotsubs: function() {
+        return axios.get("/api/totsub");
+    },
 
-  },
+    getActschools: function() {
+        return axios.get("/api/actschools");
+    },
 
+    getLocation: function() {
+        return axios.get("/api/location");
+    },
 
-  getTotsubs: function() {
-  	return axios.get("/api/totsub");
-  },
+    getActprojects: function() {
+        return axios.get("/api/actProjects");
+    },
 
+    getAgeGroupOne: function() {
+        return axios.get("/api/ageGroup1");
+    },
 
-  getActschools: function() {
-      return axios.get("/api/actschools");
-  },
+    getAgeGroupTwo: function() {
+        return axios.get("/api/ageGroup2");
+    },
 
-  getLocation: function() {
-      return axios.get("/api/location");
-  },
+    getAgeGroupThree: function() {
+        return axios.get("/api/ageGroup3");
+    },
+        
+    getAgeGroupFour: function() {
+        return axios.get("/api/ageGroup4");
+    }
 
-  getActprojects: function() {
-      return axios.get("/api/actProjects");
-  }
-
-
-
-
-	
 };
 
 
