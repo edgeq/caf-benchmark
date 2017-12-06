@@ -16,33 +16,34 @@ const { MarkerClusterer } = require("react-google-maps/lib/components/addons/Mar
 const cityMap = [
   {
     name: 'Chicago',
-    lat: 41.878, 
+    lat: 41.878,
     lng: -87.629,
     population: 27148560
   },
   {
       name: 'New York',
-      lat: 40.714, 
+      lat: 40.714,
       lng: -74.005,
       population: 8405837
   },
   {
       name: 'Los Angeles',
-      lat: 34.052, 
+      lat: 34.052,
       lng: -118.243,
       population: 3857799
   },
   {
       name: 'Vancouver',
-      lat: 49.25, 
+      lat: 49.25,
       lng: -123.1,
       population: 603502
   }
 ];
-
+//old API: AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg
+//new API: AIzaSyAxUEjeD5-5wnoEju6iBzV2ynzE7xXNU3Y
 const MapWithAMarkerClusterer = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAxUEjeD5-5wnoEju6iBzV2ynzE7xXNU3Y&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -89,7 +90,7 @@ class Map extends React.PureComponent {
 
   // componentDidMount() {
 
-    
+
 
   //   const url = [
   //     // Length issue
